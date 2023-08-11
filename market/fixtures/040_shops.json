@@ -1,0 +1,62 @@
+[
+  {
+    "model": "shops.shop",
+    "pk": 1,
+    "fields": {
+      "name": "Shop_1",
+      "user": 1,
+      "phone_number": "+79998887766",
+      "email": "sample@example.ru"
+    }
+  },
+  {
+    "model": "shops.shop",
+    "pk": 2,
+    "fields": {
+      "name": "Shop_2",
+      "user": 2,
+      "phone_number": "+79998887766",
+      "email": "sample@example.ru"
+    }
+  },
+  {
+    "model": "shops.shop",
+    "pk": 3,
+    "fields": {
+      "name": "Shop_3",
+      "user": 3,
+      "phone_number": "+79998887766",
+      "email": "sample@example.ru"
+    }
+  },
+  {
+    "model": "shops.shop",
+    "pk": 4,
+    "fields": {
+      "name": "Shop_4",
+      "user": 4,
+      "phone_number": "+79998887766",
+      "email": "sample@example.ru"
+    }
+  },
+  {
+    "model": "shops.shop",
+    "pk": 5,
+    "fields": {
+      "name": "Shop_5",
+      "user": 5,
+      "phone_number": "+79998887766",
+      "email": "sample@example.ru"
+    }
+  },
+  {
+    "model": "shops.shop",
+    "pk": 6,
+    "fields": {
+      "name": "Shop_6",
+      "user": 6,
+      "phone_number": "+79998887766",
+      "email": "sample@example.ru"
+    }
+  }
+]

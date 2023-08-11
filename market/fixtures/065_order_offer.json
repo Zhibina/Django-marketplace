@@ -1,0 +1,142 @@
+[
+  {
+    "model": "shops.orderoffer",
+    "pk": 1,
+    "fields": {
+      "order": 1,
+      "offer": 5,
+      "count": 3,
+      "price": "100.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 2,
+    "fields": {
+      "order": 1,
+      "offer": 11,
+      "count": 5,
+      "price": "100.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 3,
+    "fields": {
+      "order": 1,
+      "offer": 14,
+      "count": 6,
+      "price": "100.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 4,
+    "fields": {
+      "order": 2,
+      "offer": 12,
+      "count": 4,
+      "price": "100.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 5,
+    "fields": {
+      "order": 3,
+      "offer": 10,
+      "count": 7,
+      "price": "100.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 6,
+    "fields": {
+      "order": 3,
+      "offer": 12,
+      "count": 5,
+      "price": "100.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 7,
+    "fields": {
+      "order": 3,
+      "offer": 1,
+      "count": 1,
+      "price": "100.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 8,
+    "fields": {
+      "order": 4,
+      "offer": 8,
+      "count": 6,
+      "price": "100.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 9,
+    "fields": {
+      "order": 4,
+      "offer": 4,
+      "count": 7,
+      "price": "100.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 10,
+    "fields": {
+      "order": 4,
+      "offer": 2,
+      "count": 5,
+      "price": "100.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 11,
+    "fields": {
+      "order": 5,
+      "offer": 12,
+      "count": 4,
+      "price": "12.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 12,
+    "fields": {
+      "order": 5,
+      "offer": 17,
+      "count": 3,
+      "price": "20.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 13,
+    "fields": {
+      "order": 5,
+      "offer": 2,
+      "count": 8,
+      "price": "15.00"
+    }
+  },
+  {
+    "model": "shops.orderoffer",
+    "pk": 14,
+    "fields": {
+      "order": 6,
+      "offer": 1,
+      "count": 1,
+      "price": "123.00"
+    }
+  }
+]

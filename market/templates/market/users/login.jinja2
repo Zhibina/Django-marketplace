@@ -1,0 +1,44 @@
+{% extends 'market/base.jinja2' %}
+
+{% block middle %}
+ <main class="Middle">
+
+    <div class="wrapper">
+        <div class="header">
+            <h3 class="sign-in">Вход</h3>
+        </div>
+        <div class="clear"></div>
+        <form method="post">
+
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        {% if form.errors %}
+           {% for filed, message in form.errors.items() %}
+
+                {% if field==__all__ %}
+                <p class="error-message">{{ message }}</p>
+                {% endif %}
+           {% endfor %}
+        {% endif %}
+        <div>
+            <input class="user-input" type="text" name="{{ form.username.name }}" id="username_id" placeholder="{{ form.username.label }}"/>
+            {% if form.username.errors %}
+                <p class="error-message">{{ form.username.errors }}</p>
+            {% endif %}
+        </div>
+        <div>
+
+            <input type="password" name="{{ form.password.name }}" id="password_id" placeholder="{{ form.password.label }}"/>
+            {% if form.password.errors %}
+                <p class="error-message">{{ form.password.errors }}</p>
+            {% endif %}
+        </div>
+            <input type="submit" value="{% trans %}Войти{% endtrans %}" />
+
+            <a class="forgot-label" href="{{ url ('users:users_restore_password') }}">{% trans %}Забыли пароль?{% endtrans %}</a>
+            <a class="registr" href="{{ url ('users:users_register') }}">
+                {% trans %}Регистрация{% endtrans %}
+            </a>
+        </form>
+    </div>
+  </main>
+{% endblock %}

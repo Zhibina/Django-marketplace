@@ -1,0 +1,99 @@
+{% extends "market/base.jinja2" %}
+{% block middle %}
+    <div class="Middle Middle_top">
+        <div class="Section Section_column Section_columnLeft">
+            <div class="wrap">
+                <div class="Section-column">
+                    <div class="Section-columnSection">
+                        <header class="Section-header">
+                            <strong class="Section-title">{% trans %}Навигация{% endtrans %}
+                            </strong>
+                        </header>
+                        <div class="Section-columnContent">
+                            <div class="NavigateProfile">
+                                <ul class="menu menu_vt">
+                                    <li class="menu-item"><a class="menu-link" href="{{ url('users:users_account') }}">{% trans %}Личный кабинет{% endtrans %}</a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="{{ url('users:users_profile') }}">{% trans %}Профиль{% endtrans %}</a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="{{ url('order_history') }}">{% trans %}История заказов{% endtrans %}</a>
+                                    </li>
+                                    <li class="menu-item_ACTIVE menu-item"><a class="menu-link" href="{{ url('users:browsing-history') }}">
+                                        {% trans %}История просмотров{% endtrans %}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Section-content">
+                  <div class="Cards">
+                   {% if history %}
+
+                    {% for products in history %}
+                      {% set product_price = [] %}
+                      {% set product_discount_price = [] %}
+                      {% for prices in products.product.offers.all() %}
+                        {% if product_price.append(prices.price) %}
+                        {% endif %}
+                        {% if product_discount_price.append(prices.price_with_discount) %}
+                        {% endif %}
+                      {% endfor %}
+                      <div class="Card">
+                        <a class="Card-picture" href="{{ url('products:product_detail' ,product_id=products.product.pk) }}">
+                          <img src="{{ products.product.preview.url }}" alt="{{ products.product.preview.name }}" />
+                        </a>
+                        <div class="Card-content">
+                          <strong class="Card-title">
+                            <a href="{{ url('products:product_detail' ,product_id=products.product.pk) }}">
+                              {{ products.product.description | truncate(20, False, '...', 0) }}
+                            </a>
+                          </strong>
+                          <div class="Card-description">
+                            <div class="Card-cost">
+                              {% if (((product_price|sum)|round)/(product_price|count))|round ==
+                                (((product_discount_price|sum)|round)/(product_discount_price|count))|round %}
+                                <span class="Card-price">${{(((product_price|sum)|round)/(product_price|count))|round }}</span>
+                              {% else %}
+                                <span class="Card-priceOld">${{(((product_price|sum)|round)/(product_price|count))|round }}</span>
+                                <span class="Card-price">${{(((product_discount_price|sum)|round)/(product_discount_price|count))|round}}</span>
+                              {% endif %}
+                            </div>
+                            <div class="Card-category">{{ products.product.category.name }}
+                            </div>
+                            <form class="Card-hover" method="post" action="{{ url('cart:cart_add', products.product.id, 1) }}">
+                              {% csrf_token %}
+                              <input type="hidden" name="value_amount" value="+">
+                              <a class="Card-btn" href="#" onclick="$(this).closest('form').submit()">
+                                <img src="{{ static('market/assets/img/icons/card/cart.svg') }}" alt="cart.svg" />
+                              </a>
+                            </form>
+                          </div>
+                          <form method="post">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                            <button type="submit" name="delete" value="{{ products.product.pk }}">
+                              {% trans %}Удалить из просмотренных{% endtrans %}
+                            </button>
+                          </form>
+                          <div class="Card-description">
+                            <p>Колличество продавцов: {{ product_price|count }}</p>
+                              Отзывы: {% if products.product.get_count_reviews() %}
+                            <a class="Tabs-link" href="{{ url('products:product_detail' ,product_id=products.product.pk)}}#reviews">
+                              {{ products.product.get_count_reviews() }}</a> {% else %}
+                            <a class="Tabs-link" href="{{ url('products:product_detail' ,product_id=products.product.pk)}}#reviews">
+                              Нет отзывов
+                            </a>
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% else %}
+                <h1>Список пуст</h1>
+              {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

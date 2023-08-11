@@ -1,0 +1,63 @@
+{% extends 'market/base.jinja2' %}
+{% block header_slider %}
+{% endblock %}
+{% block middle %}
+<div class="Middle Middle_top">
+        <div class="Section">
+            <div class="wrap">
+                {% for cart_item in cart %}
+                    <form class="form Cart" method="post" action="{{ url('cart:cart_add', cart_item.offer.id, 0) }}" >
+                        <div class="Cart-product">
+                            <div class="Cart-block Cart-block_row">
+                                <div class="Cart-block Cart-block_pict">
+                                    <a class="Cart-pict" href="{{ url('products:product_detail' ,product_id=cart_item.offer.product.pk)}}">
+                                        <img class="Cart-img" src="{{ cart_item.offer.product.preview.url }}" alt="card.jpg" />
+                                    </a>
+                                </div>
+                                <div class="Cart-block Cart-block_info">
+                                    <a class="Cart-title" href="{{ url('products:product_detail' ,product_id=cart_item.offer.product.pk)}}">
+                                        {{ cart_item.offer.product }}
+                                    </a>
+                                    <div class="Cart-desc">{{ cart_item.offer.product.description }}</div>
+                                </div>
+                                <div class="Cart-block Cart-block_price">
+                                    <div class="Cart-price">{{ cart_item.offer.price * cart_item.quantity }}$
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Cart-block Cart-block_row">
+                                <div class="Cart-block Cart-block_seller">
+                                    <!-- - var options = setOptions(items, ['value', 'selected', 'disabled']);-->
+                                </div>
+                                <div class="Cart-block Cart-block_amount">
+                                    <div class="Cart-amount">
+                                            <div class="Amount">
+                                                <form method="post" action="cart.jinja2">
+                                                {% csrf_token %}
+                                                <button  type="submit" name="value_amount" value="-">-</button>
+                                                    <input readonly class="Amount-input form-input" name="amount" type="text" value="{{ cart_item.quantity }}"  />
+                                                <button  type="submit" name="value_amount" value="+">+</button>
+                                                </form>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="Cart-block Cart-block_delete">
+                                    <a class="Cart-delete" href="{{ url('cart:delete_from_cart', cart_item.offer.id) }}">
+                                        <img src="{{ static('/market/assets/img/icons/card/delete.svg') }}" alt="delete.svg" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="Cart-total">
+                        <div class="Cart-block Cart-block_total">
+                            <strong class="Cart-title">Итого:</strong><span class="Cart-price">{{ cart.get_total_price() }}</span>
+                        </div>
+                        <div class="Cart-block"><a class="btn btn_success btn_lg" href="{{ url('order') }}">Оформить заказ</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

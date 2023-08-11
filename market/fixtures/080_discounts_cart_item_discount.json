@@ -1,0 +1,154 @@
+[
+  {
+    "model": "discounts.cartitemdiscount",
+    "pk": 1,
+    "fields": {
+      "name": "Amoun Cart  %",
+      "description": "a",
+      "discount_amount": 15,
+      "discount_amount_type": 1,
+      "active": true,
+      "start_date": "2023-07-18T11:13:57.793Z",
+      "end_date": "2024-07-18T11:13:47Z",
+      "total_price_of_cart": null,
+      "amount_product_in_cart": 2,
+      "products": [],
+      "categories": []
+    }
+  },
+  {
+    "model": "discounts.cartitemdiscount",
+    "pk": 2,
+    "fields": {
+      "name": "Category Cart Sum",
+      "description": "a15",
+      "discount_amount": 150,
+      "discount_amount_type": 2,
+      "active": true,
+      "start_date": "2023-07-18T11:14:27.785Z",
+      "end_date": "2024-07-18T11:14:20Z",
+      "total_price_of_cart": null,
+      "amount_product_in_cart": 2,
+      "products": [],
+      "categories": []
+    }
+  },
+  {
+    "model": "discounts.cartitemdiscount",
+    "pk": 3,
+    "fields": {
+      "name": "Price Cart  %",
+      "description": "a",
+      "discount_amount": 14,
+      "discount_amount_type": 1,
+      "active": true,
+      "start_date": "2023-07-18T11:15:27.222Z",
+      "end_date": "2024-07-18T11:15:18Z",
+      "total_price_of_cart": "150.00",
+      "amount_product_in_cart": null,
+      "products": [],
+      "categories": []
+    }
+  },
+  {
+    "model": "discounts.cartitemdiscount",
+    "pk": 4,
+    "fields": {
+      "name": "Price Cart sum",
+      "description": "s",
+      "discount_amount": 150,
+      "discount_amount_type": 2,
+      "active": true,
+      "start_date": "2023-07-18T11:16:02.388Z",
+      "end_date": "2024-07-18T11:15:50Z",
+      "total_price_of_cart": "150.00",
+      "amount_product_in_cart": null,
+      "products": [],
+      "categories": []
+    }
+  },
+  {
+    "model": "discounts.cartitemdiscount",
+    "pk": 5,
+    "fields": {
+      "name": "Category Cart %",
+      "description": "a",
+      "discount_amount": 12,
+      "discount_amount_type": 1,
+      "active": true,
+      "start_date": "2023-07-18T11:17:28.419Z",
+      "end_date": "2024-07-18T11:17:12Z",
+      "total_price_of_cart": null,
+      "amount_product_in_cart": null,
+      "products": [
+        7
+      ],
+      "categories": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "discounts.cartitemdiscount",
+    "pk": 6,
+    "fields": {
+      "name": "Category Cart Sum",
+      "description": "s",
+      "discount_amount": 168,
+      "discount_amount_type": 2,
+      "active": true,
+      "start_date": "2023-07-18T11:17:56.765Z",
+      "end_date": "2024-07-18T11:17:46Z",
+      "total_price_of_cart": null,
+      "amount_product_in_cart": null,
+      "products": [
+        7
+      ],
+      "categories": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "discounts.cartitemdiscount",
+    "pk": 7,
+    "fields": {
+      "name": "Full param Discount %",
+      "description": "d",
+      "discount_amount": 15,
+      "discount_amount_type": 1,
+      "active": true,
+      "start_date": "2023-07-18T11:18:38.833Z",
+      "end_date": "2024-07-18T11:18:26Z",
+      "total_price_of_cart": "150.00",
+      "amount_product_in_cart": 3,
+      "products": [
+        7
+      ],
+      "categories": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "discounts.cartitemdiscount",
+    "pk": 8,
+    "fields": {
+      "name": "Full param Discount summ",
+      "description": "s",
+      "discount_amount": 188,
+      "discount_amount_type": 2,
+      "active": true,
+      "start_date": "2023-07-18T11:19:37.791Z",
+      "end_date": "2024-07-18T11:19:15Z",
+      "total_price_of_cart": "150.00",
+      "amount_product_in_cart": 3,
+      "products": [
+        7
+      ],
+      "categories": [
+        3
+      ]
+    }
+  }
+]

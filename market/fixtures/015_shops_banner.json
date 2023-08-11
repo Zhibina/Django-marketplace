@@ -1,0 +1,32 @@
+[
+{
+  "model": "shops.banner",
+  "pk": 1,
+  "fields": {
+    "title": "Mavic Pro 5 Mini Drone",
+    "description": "Get the best phoneyou ever seen with modern Windows OS plus 70% Off this summer.",
+    "image": "media/banners/slider_gHnl5av.png",
+    "active": true
+  }
+},
+{
+  "model": "shops.banner",
+  "pk": 2,
+  "fields": {
+    "title": "Mavic Pro 6 Mini Drone",
+    "description": "Get the best phoneyou ever seen with modern Windows OS plus 60% Off this summer.",
+    "image": "media/banners/slider_MF3xFbS.png",
+    "active": true
+  }
+},
+{
+  "model": "shops.banner",
+  "pk": 3,
+  "fields": {
+    "title": "Mavic Pro 4 Mini Drone",
+    "description": "Get the best phoneyou ever seen with modern Windows OS plus 40% Off this summer.",
+    "image": "media/banners/slider_n2YuxfZ.png",
+    "active": true
+  }
+}
+]

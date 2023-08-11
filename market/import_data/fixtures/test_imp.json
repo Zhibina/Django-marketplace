@@ -1,0 +1,16 @@
+[
+    {
+      "name": "Ноутбук ASUS VivoBook 15",
+      "description": "Ноутбук ASUS VivoBook 15 с диагональю экрана 15.6 дюйма, процессором Intel Core i5.",
+      "limited_edition": true,
+      "category": "Ноутбуки",
+      "preview": "preview1.png"
+    },
+    {
+      "name": "Смартфон Samsung Galaxy S21",
+      "description": "Description 2",
+      "limited_edition": false,
+      "category": "Смартфоны",
+      "preview": "preview2.png"
+    }
+]

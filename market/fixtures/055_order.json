@@ -1,0 +1,86 @@
+[
+  {
+    "model": "shops.order",
+    "pk": 1,
+    "fields": {
+      "custom_user": 12,
+      "status": 1,
+      "data": "2023-06-20T10:47:25.083Z",
+      "delivery": "ORDINARY",
+      "city": "Сочи",
+      "address": "Спортивная д.2 кв.43",
+      "pay": "ONLINE",
+      "total_cost": "999.50"
+    }
+  },
+  {
+    "model": "shops.order",
+    "pk": 2,
+    "fields": {
+      "custom_user": 14,
+      "status": 2,
+      "data": "2023-06-21T13:37:30.709Z",
+      "delivery": "ORDINARY",
+      "city": "Москва",
+      "address": "Юбилейная  д.3",
+      "pay": "ONLINE",
+      "total_cost": "999.50"
+    }
+  },
+  {
+    "model": "shops.order",
+    "pk": 3,
+    "fields": {
+      "custom_user": 11,
+      "status": 1,
+      "data": "2023-06-27T11:18:47.407Z",
+      "delivery": "ORDINARY",
+      "city": "1222",
+      "address": "122",
+      "pay": "ONLINE",
+      "total_cost": "999.50"
+    }
+  },
+  {
+    "model": "shops.order",
+    "pk": 4,
+    "fields": {
+      "custom_user": 11,
+      "status": 2,
+      "data": "2023-06-27T11:19:40.396Z",
+      "delivery": "ORDINARY",
+      "city": "ddkkf",
+      "address": "4343434",
+      "pay": "SOMEONE",
+      "total_cost": "999.50"
+    }
+  },
+  {
+    "model": "shops.order",
+    "pk": 5,
+    "fields": {
+      "custom_user": 13,
+      "status": 1,
+      "data": "2023-06-30T05:28:56.518Z",
+      "delivery": "ORDINARY",
+      "city": "Москва",
+      "address": "ул. Пупкина",
+      "pay": "ONLINE",
+      "total_cost": "500.00"
+    }
+  },
+  {
+    "model": "shops.order",
+    "pk": 6,
+    "fields": {
+      "custom_user": 16,
+      "status": 4,
+      "data": "2023-08-04T08:15:00.214Z",
+      "delivery": "ORDINARY",
+      "city": "a",
+      "address": "a",
+      "pay": "ONLINE",
+      "total_cost": "123.00"
+    }
+  }
+]

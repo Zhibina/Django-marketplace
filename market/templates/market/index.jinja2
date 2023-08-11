@@ -1,0 +1,37 @@
+{% extends 'market/base.jinja2' %}
+
+{% block header_slider %}
+  {% include "market/banner.jinja2" %}
+{% endblock %}
+
+{% block middle %}
+  {% include 'market/home_categories.jinja2' %}
+  <div class="Section Section_column Section_columnLeft Section_columnDesktop">
+      <div class="wrap">
+          {% block limited_products %}
+            {% include 'market/limited_products.jinja2' %}
+          {% endblock %}
+          <div class="Section-content">
+            {% include 'market/popular_products.jinja2' %}
+          </div>
+      </div>
+  </div>
+    <div class="Section Section_dark">
+        <div class="wrap">
+            <div class="Section-content">
+                <header class="Section-header">
+                  <h2 class="Section-title">{% trans %}Горячие предложения {% endtrans %}</h2>
+                </header>
+                <div class="Cards">
+                  {% block top_products %}
+                    {% include 'market/top-products.jinja2' %}
+                  {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+  {% block edition %}
+    {% include 'market/limited_edition.jinja2' %}
+  {% endblock %}
+{% endblock %}

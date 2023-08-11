@@ -1,0 +1,1137 @@
+# English (United States) translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-07-10 13:40+0300\n"
+"PO-Revision-Date: 2023-07-10 15:49+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en_US\n"
+"Language-Team: en_US <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: catalog/models.py:9 products/models.py:26 products/models.py:81
+msgid "наименование"
+msgstr "name"
+
+#: catalog/models.py:11
+msgid "картинка"
+msgstr "picture"
+
+#: catalog/models.py:12
+msgid "избранная категория"
+msgstr "selected category"
+
+#: catalog/models.py:18 products/models.py:45
+msgid "категория"
+msgstr "category"
+
+#: catalog/models.py:19
+msgid "категории"
+msgstr "categories"
+
+#: config/settings.py:189
+msgid "Английский"
+msgstr "English"
+
+#: config/settings.py:190
+msgid "Русский"
+msgstr "Russian"
+
+#: discounts/admin.py:29 discounts/admin.py:84
+msgid "Время до окончания действия скидки"
+msgstr "Time until the end of the discount"
+
+#: discounts/admin.py:56
+msgid "Скидка на группу товаров"
+msgstr "Discount on a group of products"
+
+#: discounts/admin.py:60
+msgid "Дополнительные параметры"
+msgstr "Additional parameters"
+
+#: discounts/forms.py:22 discounts/tests.py:115
+msgid "Заполните хотя бы одно поле для категории или товаров"
+msgstr "Fill in at least one field for the category or products"
+
+#: discounts/forms.py:36 discounts/tests.py:120 discounts/tests.py:147
+msgid ""
+"Дата окончания действия скидки должна быть больше даты начала действия "
+"скидки"
+msgstr ""
+"The expiration date of the discount must be greater than the start date "
+"of the discount"
+
+#: discounts/forms.py:42 discounts/tests.py:125 discounts/tests.py:152
+msgid "Скидка в % не должна превышать 99 %"
+msgstr "The discount in % should not exceed 99 %"
+
+#: discounts/forms.py:53 discounts/models.py:101
+msgid "Минимальная цена товаров в корзине"
+msgstr "Minimum price of goods in the basket"
+
+#: discounts/forms.py:54 discounts/models.py:102
+msgid "Скидка может быть установлена на стоимость товаров в корзине."
+msgstr "The discount can be set on the cost of the goods in the basket"
+
+#: discounts/forms.py:61 discounts/models.py:109
+msgid "Максимальная цена товаров в корзине"
+msgstr "Maximum price of goods in the basket"
+
+#: discounts/forms.py:81 discounts/tests.py:183
+msgid "Выберете товары для второй группы"
+msgstr "Select products for the second group"
+
+#: discounts/forms.py:96 discounts/tests.py:173
+msgid "Максимальная сумма должна быть больше минимальной"
+msgstr "The maximum amount must be greater than the minimum"
+
+#: discounts/forms.py:103 discounts/tests.py:178
+msgid "Максимальное количество товаров в корзине должно быть больше минимального"
+msgstr ""
+"The maximum number of products in the basket must be greater than the "
+"minimum"
+
+#: discounts/forms.py:117 discounts/tests.py:142
+msgid "Заполните хотя бы одно условие для получения скидки"
+msgstr "Fill in at least one condition to get a discount"
+
+#: discounts/models.py:13
+msgid "проценты"
+msgstr "percentages"
+
+#: discounts/models.py:14
+msgid "сумма"
+msgstr "the amount"
+
+#: discounts/models.py:18
+msgid "название скидки"
+msgstr "name of the discount"
+
+#: discounts/models.py:20
+msgid "Описание скидки"
+msgstr "Description of the discount"
+
+#: discounts/models.py:22
+msgid "размер скидки"
+msgstr "discount amount"
+
+#: discounts/models.py:28
+msgid "Скидка активна"
+msgstr "The discount is active"
+
+#: discounts/models.py:31
+msgid "дата начала действия скидки"
+msgstr "discount start date"
+
+#: discounts/models.py:34
+msgid "дата окончания действия скидки"
+msgstr "discount expiration date"
+
+#: discounts/models.py:54
+msgid "скидка на товар в магазине"
+msgstr "discount on goods in the store"
+
+#: discounts/models.py:55
+msgid "скидки на товары в магазине"
+msgstr "discounts on products in the store"
+
+#: discounts/models.py:61
+msgid "товары"
+msgstr "products"
+
+#: discounts/models.py:67
+msgid "категории товаров"
+msgstr "product categories"
+
+#: discounts/models.py:75
+msgid "скидка на товар в корзине"
+msgstr "discount on the product in the cart"
+
+#: discounts/models.py:76
+msgid "скидки на товары в корзине"
+msgstr "discounts on products in the basket"
+
+#: discounts/models.py:82
+msgid "группа товаров 1"
+msgstr "product group 1"
+
+#: discounts/models.py:83
+msgid ""
+"Скидка может быть установлена на группу товаров, если они вместе "
+"находятся в корзине. Указывается группа товаров 1 и группа товаров 2."
+msgstr ""
+"The discount can be set for a group of products if they are in the basket"
+" together. Product group 1 and product group 2 are indicated."
+
+#: discounts/models.py:93
+msgid "группа товаров 2"
+msgstr "product group 2"
+
+#: discounts/models.py:115
+msgid "Минимальное количество товаров в корзине"
+msgstr "Minimum number of products in the basket"
+
+#: discounts/models.py:116
+msgid "Скидка может быть установлена на количество товаров в корзине."
+msgstr "The discount can be set on the number of items in the basket"
+
+#: discounts/models.py:121
+msgid "Максимальное количество товаров в корзине"
+msgstr "Maximum number of products in the basket"
+
+#: products/admin.py:28
+msgid "Количество отзывов"
+msgstr "Number of reviews"
+
+#: products/admin.py:34
+msgid "Рейтинг товара"
+msgstr "Product rating"
+
+#: products/models.py:23
+msgid "продукты"
+msgstr "products"
+
+#: products/models.py:24
+msgid "продукт"
+msgstr "product"
+
+#: products/models.py:27
+msgid "ограниченный тираж"
+msgstr "limited edition"
+
+#: products/models.py:28
+msgid "индекс сортировки"
+msgstr "sorting index"
+
+#: products/models.py:33
+msgid "предварительный просмотр"
+msgstr "preview"
+
+#: products/models.py:38
+msgid "характеристики"
+msgstr "specifications"
+
+#: products/models.py:49
+msgid "описание"
+msgstr "description"
+
+#: products/models.py:78
+msgid "свойства"
+msgstr "features"
+
+#: products/models.py:79 products/models.py:97
+msgid "свойство"
+msgstr "property"
+
+#: products/models.py:91
+msgid "свойства продуктов"
+msgstr "product properties"
+
+#: products/models.py:93
+msgid "свойство продукта"
+msgstr "product property"
+
+#: products/models.py:99
+msgid "значение"
+msgstr "meaning"
+
+#: products/models.py:112
+msgid "изображение продукта"
+msgstr "product image"
+
+#: products/models.py:113
+msgid "изображения продуктов"
+msgstr "product images"
+
+#: products/models.py:119
+msgid "Изображение"
+msgstr "Image"
+
+#: products/models.py:122 templates/market/products/product_detail.jinja2:93
+msgid "Описание"
+msgstr "Description"
+
+#: products/models.py:131
+msgid "отзыв"
+msgstr "feedback"
+
+#: products/models.py:132
+msgid "отзывы"
+msgstr "reviews"
+
+#: products/models.py:142
+msgid "Покупатель"
+msgstr "Buyer"
+
+#: products/models.py:145
+msgid "Продукт"
+msgstr "Product"
+
+#: products/models.py:150
+msgid "Оценка"
+msgstr "Evaluation"
+
+#: products/models.py:153
+msgid "Текст отзыва"
+msgstr "Review text"
+
+#: products/models.py:185
+msgid "Просмотр продута"
+msgstr "Viewing the product"
+
+#: products/models.py:186
+msgid "Просмотр продуктов"
+msgstr "Viewing products"
+
+#: products/models.py:198
+msgid "имя файла или URL для импорта"
+msgstr "file name or URL to import"
+
+#: products/models.py:199
+msgid "дата и время начала импорта"
+msgstr "date and time of import start"
+
+#: products/models.py:200
+msgid "дата и время окончания импорта"
+msgstr "date and time of the end of the import"
+
+#: products/models.py:205
+msgid "статус импорта"
+msgstr "import status"
+
+#: products/models.py:206
+msgid "количество импортированных товаров"
+msgstr "number of imported goods"
+
+#: products/models.py:207
+msgid "список ошибок при импорте"
+msgstr "list of import errors"
+
+#: products/models.py:208
+msgid "email получателя уведомления"
+msgstr "email of the notification recipient"
+
+#: products/models.py:209
+msgid "идентификатор задачи"
+msgstr "task ID"
+
+#: shops/models.py:10
+msgid "название"
+msgstr "title"
+
+#: shops/models.py:12
+msgid "товары в магазине"
+msgstr "products in the store"
+
+#: shops/models.py:13 shops/models.py:83 users/models.py:104
+msgid "пользователь"
+msgstr "user"
+
+#: shops/models.py:14
+msgid "номер телефона"
+msgstr "phone number"
+
+#: shops/models.py:15
+msgid "почта"
+msgstr "mail"
+
+#: shops/models.py:25
+msgid "цена"
+msgstr "price"
+
+#: shops/models.py:26
+msgid "товар в наличии"
+msgstr "product in stock"
+
+#: shops/models.py:27
+msgid "бесплатная доставка"
+msgstr "free shipping"
+
+#: shops/models.py:35
+msgid "баннер"
+msgstr "banner"
+
+#: shops/models.py:36
+msgid "баннеры"
+msgstr "banners"
+
+#: shops/models.py:38
+msgid "название баннера"
+msgstr "banner name"
+
+#: shops/models.py:39
+msgid "описание баннера"
+msgstr "description of the banner"
+
+#: shops/models.py:41
+msgid "изображение баннера"
+msgstr "banner image"
+
+#: shops/models.py:43
+msgid "статус активности баннера"
+msgstr "banner activity status"
+
+#: shops/models.py:53 shops/models.py:57
+msgid "статус заказа"
+msgstr "order status"
+
+#: shops/models.py:54
+msgid "статусы заказа"
+msgstr "order statuses"
+
+#: shops/models.py:56
+msgid "порядковый индекс"
+msgstr "ordinal index"
+
+#: shops/models.py:67
+msgid "заказ"
+msgstr "order"
+
+#: shops/models.py:68
+msgid "заказы"
+msgstr "orders"
+
+#: shops/models.py:71
+msgid "Обычная"
+msgstr "Usual"
+
+#: shops/models.py:72
+msgid "Экспрес"
+msgstr "Express"
+
+#: shops/models.py:76
+msgid "Онлайн"
+msgstr "Online"
+
+#: shops/models.py:77 templates/market/order/order.jinja2:143
+msgid "Онлайн со случайного чужого счета"
+msgstr "Online from a random someone else's account"
+
+#: shops/models.py:86
+msgid "предложение"
+msgstr "proposal"
+
+#: shops/models.py:90
+msgid "статус"
+msgstr "status"
+
+#: shops/models.py:91
+msgid "дата создания"
+msgstr "date of creation"
+
+#: shops/models.py:92 shops/models.py:95
+msgid "доставка"
+msgstr "delivery"
+
+#: shops/models.py:93
+msgid "город"
+msgstr "city"
+
+#: shops/models.py:94
+msgid "адрес"
+msgstr "address"
+
+#: shops/models.py:104
+msgid "количество"
+msgstr "quantity"
+
+#: shops/models.py:112
+msgid "изменение статуса заказа"
+msgstr "changing the order status"
+
+#: shops/models.py:113
+msgid "изменение статусов заказов"
+msgstr "changing order statuses"
+
+#: shops/models.py:115
+msgid "время изменения"
+msgstr "time of change"
+
+#: templates/market/footer.jinja2:10 templates/market/header.jinja2:54
+msgid "Главная"
+msgstr "Main"
+
+#: templates/market/footer.jinja2:12
+msgid "Каталог"
+msgstr "Catalog"
+
+#: templates/market/footer.jinja2:14 templates/market/header.jinja2:58
+msgid "Сравнение"
+msgstr "Comparison"
+
+#: templates/market/footer.jinja2:16
+#: templates/market/order/historyorder.jinja2:17
+#: templates/market/users/account.jinja2:24
+#: templates/market/users/profile.jinja2:16
+#: templates/market/users/profile.jinja2:38
+msgid "Профиль"
+msgstr "Profile"
+
+#: templates/market/footer.jinja2:22
+msgid "Контакты"
+msgstr "Contacts"
+
+#: templates/market/head.jinja2:3
+msgid "Описание страницы"
+msgstr "Page Description"
+
+#: templates/market/header.jinja2:26 templates/market/users/register.jinja2:42
+msgid "Вход"
+msgstr "Entrance"
+
+#: templates/market/header.jinja2:27 templates/market/users/login.jinja2:39
+#: templates/market/users/register.jinja2:8
+msgid "Регистрация"
+msgstr "Registration"
+
+#: templates/market/header.jinja2:56 templates/market/header.jinja2:127
+msgid "Скидки"
+msgstr "Discounts"
+
+#: templates/market/header.jinja2:71
+#: templates/market/order/historyorder.jinja2:15
+#: templates/market/users/account.jinja2:21
+#: templates/market/users/profile.jinja2:34
+msgid "Личный кабинет"
+msgstr "Personal account"
+
+#: templates/market/header.jinja2:72
+msgid "Административный раздел"
+msgstr "Administrative Section"
+
+#: templates/market/header.jinja2:73
+msgid "Выход"
+msgstr "Exit"
+
+#: templates/market/header.jinja2:83
+msgid "Показать навигацию"
+msgstr "Show navigation"
+
+#: templates/market/header.jinja2:97
+msgid "Все категории"
+msgstr "All categories"
+
+#: templates/market/header.jinja2:104
+msgid "Телевизоры"
+msgstr "Televisions"
+
+#: templates/market/header.jinja2:109
+msgid "Наушники"
+msgstr "Headphones"
+
+#: templates/market/header.jinja2:114
+msgid "Стиральные машины"
+msgstr "Washing machines"
+
+#: templates/market/header.jinja2:118 templates/market/header.jinja2:174
+msgid "Аксессуары"
+msgstr "Accessories"
+
+#: templates/market/header.jinja2:121
+msgid "Чехлы"
+msgstr "Covers"
+
+#: templates/market/header.jinja2:132
+msgid "Электроника"
+msgstr "Electronics"
+
+#: templates/market/header.jinja2:137
+msgid "Фотоаппараты"
+msgstr "Cameras"
+
+#: templates/market/header.jinja2:142
+msgid "Фурнитура"
+msgstr "Accessories"
+
+#: templates/market/header.jinja2:146 templates/market/header.jinja2:155
+msgid "Мобильные телефоны"
+msgstr "Mobile phones"
+
+#: templates/market/header.jinja2:149 templates/market/header.jinja2:177
+msgid "Сумки"
+msgstr "Bags"
+
+#: templates/market/header.jinja2:160
+msgid "Микроволновые печи"
+msgstr "Microwave ovens"
+
+#: templates/market/header.jinja2:165
+msgid "Кухонная техника"
+msgstr "Kitchen appliances"
+
+#: templates/market/header.jinja2:170
+msgid "Торшеры"
+msgstr "Floor lamps"
+
+#: templates/market/index.jinja2:16
+msgid "Популярные товары"
+msgstr "Popular products"
+
+#: templates/market/limited_edition.jinja2:6
+msgid "Ограниченный тираж"
+msgstr "Limited edition"
+
+#: templates/market/limited_products.jinja2:4
+msgid "ОГРАНИЧЕННЫЕ ПРЕДЛОЖЕНИЯ"
+msgstr "LIMITED OFFERS"
+
+#: templates/market/limited_products.jinja2:9
+msgid "Corsair Carbide Series Arctic White Steel"
+msgstr "Сталь серии Corsair Carbide Arctic White Steel"
+
+#: templates/market/limited_products.jinja2:22
+msgid "Дни"
+msgstr "Days"
+
+#: templates/market/limited_products.jinja2:28
+msgid "часы"
+msgstr "hours"
+
+#: templates/market/limited_products.jinja2:34
+msgid "минуты"
+msgstr "minutes"
+
+#: templates/market/limited_products.jinja2:40
+msgid "секунды"
+msgstr "seconds"
+
+#: templates/market/catalog/catalog.jinja2:13
+#: templates/market/catalog/catalog.jinja2:49
+msgid "Фильтр"
+msgstr "Filter"
+
+#: templates/market/catalog/catalog.jinja2:23
+msgid "Цена"
+msgstr "Price"
+
+#: templates/market/catalog/catalog.jinja2:39
+msgid "Только товары в наличии"
+msgstr "Only products in stock"
+
+#: templates/market/catalog/catalog.jinja2:45
+msgid "С бесплатной доставкой"
+msgstr "With free shipping"
+
+#: templates/market/catalog/catalog.jinja2:57
+msgid "Популярные тэги"
+msgstr "Popular tags"
+
+#: templates/market/catalog/catalog.jinja2:81
+msgid "Сортировать по:"
+msgstr "Sort by:"
+
+#: templates/market/catalog/catalog.jinja2:87
+msgid "Популярности"
+msgstr "Popularity"
+
+#: templates/market/catalog/catalog.jinja2:88
+msgid "Цене"
+msgstr "Price"
+
+#: templates/market/catalog/catalog.jinja2:89
+msgid "Отзывам"
+msgstr "Reviews"
+
+#: templates/market/catalog/catalog.jinja2:90
+msgid "Новизне"
+msgstr "Novelty"
+
+#: templates/market/order/historyorder.jinja2:9
+#: templates/market/users/account.jinja2:13
+#: templates/market/users/profile.jinja2:27
+msgid "Навигация"
+msgstr "Navigation"
+
+#: templates/market/order/historyorder.jinja2:19
+#: templates/market/users/account.jinja2:27
+#: templates/market/users/account.jinja2:59
+#: templates/market/users/profile.jinja2:41
+msgid "История заказов"
+msgstr "Order history"
+
+#: templates/market/order/historyorder.jinja2:33
+#: templates/market/order/oneorder.jinja2:7
+#: templates/market/users/account.jinja2:55
+msgid "Заказ"
+msgstr "Order"
+
+#: templates/market/order/historyorder.jinja2:37
+#: templates/market/order/oneorder.jinja2:49
+#: templates/market/order/order.jinja2:183
+msgid "Тип доставки"
+msgstr "Type of delivery"
+
+#: templates/market/order/historyorder.jinja2:43
+#: templates/market/order/oneorder.jinja2:67
+#: templates/market/order/order.jinja2:201
+msgid "Оплата"
+msgstr "Payment"
+
+#: templates/market/order/historyorder.jinja2:49
+msgid "Общая стоимость"
+msgstr "Total cost"
+
+#: templates/market/order/historyorder.jinja2:56
+#: templates/market/order/oneorder.jinja2:74
+#: templates/market/products/import_detail.jinja2:8
+#: templates/market/products/import_list.jinja2:11
+msgid "Статус"
+msgstr "Status"
+
+#: templates/market/order/historyorder.jinja2:63
+#: templates/market/order/oneorder.jinja2:81
+msgid "Оплата не прошла"
+msgstr "Payment failed"
+
+#: templates/market/order/historyorder.jinja2:65
+#: templates/market/order/oneorder.jinja2:83
+msgid "Оплата не выполнена"
+msgstr "Payment failed"
+
+#: templates/market/order/oneorder.jinja2:23
+msgid "Дата заказа"
+msgstr "Order date"
+
+#: templates/market/order/oneorder.jinja2:29
+#: templates/market/order/order.jinja2:42
+#: templates/market/order/order.jinja2:163
+msgid "ФИО"
+msgstr "Last name first name patronymic"
+
+#: templates/market/order/oneorder.jinja2:35
+#: templates/market/order/order.jinja2:49
+#: templates/market/order/order.jinja2:169
+#: templates/market/shops/seller_detail.jinja2:9
+#: templates/market/users/profile.jinja2:97
+msgid "Телефон"
+msgstr "Telephone"
+
+#: templates/market/order/oneorder.jinja2:55
+#: templates/market/order/order.jinja2:118
+#: templates/market/order/order.jinja2:189
+msgid "Город"
+msgstr "City"
+
+#: templates/market/order/oneorder.jinja2:61
+#: templates/market/order/order.jinja2:123
+#: templates/market/order/order.jinja2:195
+msgid "Адрес"
+msgstr "Address"
+
+#: templates/market/order/oneorder.jinja2:109
+msgid "шт"
+msgstr "quantity"
+
+#: templates/market/order/oneorder.jinja2:116
+#: templates/market/order/order.jinja2:266
+msgid "Итого"
+msgstr "Total"
+
+#: templates/market/order/oneorder.jinja2:120
+#: templates/market/order/order.jinja2:274
+msgid "Оплатить"
+msgstr "To pay"
+
+#: templates/market/order/order.jinja2:11
+msgid "Прогресс заполнения"
+msgstr "Filling progress"
+
+#: templates/market/order/order.jinja2:17
+#: templates/market/order/order.jinja2:35
+msgid "Шаг 1. Параметры пользователя"
+msgstr "Step 1. User Parameters"
+
+#: templates/market/order/order.jinja2:19
+#: templates/market/order/order.jinja2:102
+msgid "Шаг 2. Способ доставки"
+msgstr "Step 2. Delivery Method"
+
+#: templates/market/order/order.jinja2:21
+#: templates/market/order/order.jinja2:132
+msgid "Шаг 3. Способ оплаты"
+msgstr "Step 3. Payment method"
+
+#: templates/market/order/order.jinja2:23
+#: templates/market/order/order.jinja2:152
+msgid "Шаг 4. Подтверждение заказа"
+msgstr "Step 4. Order Confirmation"
+
+#: templates/market/order/order.jinja2:64
+#: templates/market/order/order.jinja2:127
+#: templates/market/order/order.jinja2:147
+msgid "Дальше"
+msgstr "Further"
+
+#: templates/market/order/order.jinja2:77
+#: templates/market/users/profile.jinja2:108
+msgid "Пароль"
+msgstr "Password"
+
+#: templates/market/order/order.jinja2:83
+msgid "Войдите в свою учётную запись"
+msgstr "Log in to your account"
+
+#: templates/market/order/order.jinja2:94
+msgid "Я еще не зарегистрирован"
+msgstr "I am not registered yet"
+
+#: templates/market/order/order.jinja2:108
+#: templates/market/order/order.jinja2:185
+#: templates/market/products/product_detail.jinja2:149
+#: templates/market/users/account.jinja2:66
+msgid "Обычная доставка"
+msgstr "Regular delivery"
+
+#: templates/market/order/order.jinja2:113
+msgid "Экспресс доставка"
+msgstr "Express delivery"
+
+#: templates/market/order/order.jinja2:138
+#: templates/market/order/order.jinja2:203
+#: templates/market/products/product_detail.jinja2:155
+#: templates/market/users/account.jinja2:72
+msgid "Онлайн картой"
+msgstr "Online Card"
+
+#: templates/market/order/order.jinja2:214
+#: templates/market/order/order.jinja2:250
+msgid "Ноутбук"
+msgstr "A laptop"
+
+#: templates/market/order/order.jinja2:215
+#: templates/market/order/order.jinja2:251
+msgid "Это супер ноутбук, 3 гб. 4 ядра"
+msgstr "This is a super laptop, 3 GB. 4 cores"
+
+#: templates/market/order/order.jinja2:224
+#: templates/market/order/order.jinja2:242
+#: templates/market/order/order.jinja2:260
+msgid "1 шт"
+msgstr "1 quantity"
+
+#: templates/market/order/order.jinja2:232
+msgid "Планшет"
+msgstr "Tablet"
+
+#: templates/market/order/order.jinja2:233
+msgid "Это планшет с современным железом. Процессор последнего поколения"
+msgstr "This is a tablet with modern hardware. The latest generation processor"
+
+#: templates/market/order/order.jinja2:270
+msgid "Доставка"
+msgstr "Delivery"
+
+#: templates/market/products/import_detail.jinja2:3
+msgid "Детали импорта"
+msgstr "Import Details"
+
+#: templates/market/products/import_detail.jinja2:5
+msgid "Имя файла"
+msgstr "Имя файла"
+
+#: templates/market/products/import_detail.jinja2:6
+msgid "Дата и время запуска"
+msgstr "Launch date and time"
+
+#: templates/market/products/import_detail.jinja2:7
+#: templates/market/products/import_list.jinja2:10
+msgid "Дата и время окончания"
+msgstr "End date and time"
+
+#: templates/market/products/import_detail.jinja2:9
+msgid "Результат"
+msgstr "Result"
+
+#: templates/market/products/import_detail.jinja2:11
+#: templates/market/products/import_list.jinja2:13
+msgid "Ошибки"
+msgstr "Mistakes"
+
+#: templates/market/products/import_form.jinja2:8
+msgid "Запуск импорта"
+msgstr "Starting the import"
+
+#: templates/market/products/import_form.jinja2:19
+msgid "Запустить импорт"
+msgstr "Start the import"
+
+#: templates/market/products/import_list.jinja2:4
+msgid "Список импортов"
+msgstr "List of imports"
+
+#: templates/market/products/import_list.jinja2:8
+msgid "Имя файла или URL"
+msgstr "File name or URL"
+
+#: templates/market/products/import_list.jinja2:9
+msgid "Дата и время начала"
+msgstr "Start date and time"
+
+#: templates/market/products/import_list.jinja2:12
+msgid "Количество импортированных товаров"
+msgstr "Number of imported goods"
+
+#: templates/market/products/product_detail.jinja2:58
+#: templates/market/products/product_detail.jinja2:141
+msgid "Купить"
+msgstr "Buy"
+
+#: templates/market/products/product_detail.jinja2:65
+msgid "Поздравляем!"
+msgstr "Congratulations!"
+
+#: templates/market/products/product_detail.jinja2:66
+msgid "\"Закрыть модальное окно\""
+msgstr "Close the modal window"
+
+#: templates/market/products/product_detail.jinja2:69
+msgid "Товар успешно добавлен в корзину!"
+msgstr "The product has been successfully added to the cart!"
+
+#: templates/market/products/product_detail.jinja2:96
+msgid "Продавцы"
+msgstr "Sellers"
+
+#: templates/market/products/product_detail.jinja2:99
+#: templates/market/products/product_detail.jinja2:113
+#: templates/market/shops/comparison.jinja2:58
+msgid "Характеристика"
+msgstr "Characteristic"
+
+#: templates/market/products/product_detail.jinja2:102
+msgid "Отзывы"
+msgstr "Reviews"
+
+#: templates/market/products/product_detail.jinja2:115
+#: templates/market/shops/comparison.jinja2:59
+msgid "Значение"
+msgstr "Meaning"
+
+#: templates/market/products/product_detail.jinja2:119
+msgid "Тип устройства"
+msgstr "Device Type"
+
+#: templates/market/products/product_detail.jinja2:147
+#: templates/market/users/account.jinja2:64
+msgid "Тип доставки:"
+msgstr "Type of delivery:"
+
+#: templates/market/products/product_detail.jinja2:153
+#: templates/market/users/account.jinja2:70
+msgid "Оплата:"
+msgstr "Payment:"
+
+#: templates/market/products/product_detail.jinja2:159
+msgid "Стоимость:"
+msgstr "Cost:"
+
+#: templates/market/products/product_detail.jinja2:183
+msgid "Средний рейтинг товара:"
+msgstr "Average product rating:"
+
+#: templates/market/products/product_detail.jinja2:188
+msgid "Загрузить еще отзывы"
+msgstr "Download more reviews"
+
+#: templates/market/products/product_detail.jinja2:196
+msgid "Оценка «5»"
+msgstr "Evaluation 5"
+
+#: templates/market/products/product_detail.jinja2:198
+msgid "Оценка «4»"
+msgstr "Evaluation 4"
+
+#: templates/market/products/product_detail.jinja2:200
+msgid "Оценка «3»"
+msgstr "Evaluation 3"
+
+#: templates/market/products/product_detail.jinja2:202
+msgid "Оценка «2»"
+msgstr "Evaluation 2"
+
+#: templates/market/products/product_detail.jinja2:204
+msgid "Оценка «1»"
+msgstr "Evaluation 1"
+
+#: templates/market/products/product_detail.jinja2:211
+msgid "Отзыв"
+msgstr "Feedback"
+
+#: templates/market/products/product_detail.jinja2:217
+msgid "Отправить отзыв"
+msgstr "Send feedback"
+
+#: templates/market/shops/comparison.jinja2:9
+msgid "Показать одинаковые свойства"
+msgstr "Show identical properties"
+
+#: templates/market/shops/comparison.jinja2:40
+msgid "Удалить"
+msgstr "Remove"
+
+#: templates/market/shops/comparison.jinja2:91
+msgid "Добавить в корзину"
+msgstr "Add to Cart"
+
+#: templates/market/shops/seller_detail.jinja2:6
+#: templates/market/users/profile.jinja2:85
+msgid "Имя"
+msgstr "Name"
+
+#: templates/market/shops/seller_detail.jinja2:7
+msgid "Магазин"
+msgstr "Shop"
+
+#: templates/market/users/account.jinja2:47
+msgid "Редактировать профиль"
+msgstr "Edit Profile"
+
+#: templates/market/users/account.jinja2:56
+msgid "от"
+msgstr "from"
+
+#: templates/market/users/account.jinja2:76
+msgid "Общая стоимость:"
+msgstr "Total cost:"
+
+#: templates/market/users/account.jinja2:82
+msgid "Статус:"
+msgstr "Status:"
+
+#: templates/market/users/account.jinja2:84
+msgid "Не оплачен"
+msgstr "Not paid"
+
+#: templates/market/users/browsing_history.jinja2:3
+msgid "Просмотрено всего:"
+msgstr "Total viewed:"
+
+#: templates/market/users/browsing_history.jinja2:29
+msgid "Удалить из просмотренных"
+msgstr "Remove from Viewed"
+
+#: templates/market/users/login.jinja2:35
+msgid "Войти"
+msgstr "Enter"
+
+#: templates/market/users/login.jinja2:37
+msgid "Забыли пароль?"
+msgstr "Forgot your password?"
+
+#: templates/market/users/password.jinja2:7
+msgid "Восстановление пароля"
+msgstr "Password Recovery"
+
+#: templates/market/users/password.jinja2:8
+msgid "Введите email пользователя"
+msgstr "Enter the user's email"
+
+#: templates/market/users/password.jinja2:22
+msgid "Отправить новый пароль на email."
+msgstr "Send a new password by email."
+
+#: templates/market/users/profile.jinja2:11
+msgid " Профиль "
+msgstr "Profile"
+
+#: templates/market/users/profile.jinja2:14
+msgid "Домой"
+msgstr "Home"
+
+#: templates/market/users/profile.jinja2:63
+msgid "Выберите аватар"
+msgstr "Choose an avatar"
+
+#: templates/market/users/profile.jinja2:70
+msgid "Аватар"
+msgstr "Avatar"
+
+#: templates/market/users/profile.jinja2:77
+msgid "Загрузить фото"
+msgstr "Upload a photo"
+
+#: templates/market/users/profile.jinja2:89
+msgid "Фамилия"
+msgstr "Surname"
+
+#: templates/market/users/profile.jinja2:114
+msgid "Подтверждение пароля"
+msgstr "Password Confirmation"
+
+#: templates/market/users/profile.jinja2:120
+msgid "Сохранить"
+msgstr "Save"
+
+#: templates/market/users/register.jinja2:39
+msgid "Зарегистрироваться"
+msgstr "Register"
+
+#: users/admin.py:12
+msgid "личная информация"
+msgstr "personal information"
+
+#: users/admin.py:14
+msgid "разрешения"
+msgstr "permissions"
+
+#: users/admin.py:25
+msgid "важные даты"
+msgstr "important dates"
+
+#: users/forms.py:62
+msgid "Укажите email пользователя"
+msgstr "Specify the user's email address"
+
+#: users/forms.py:71
+msgid "новый пароль"
+msgstr "new password"
+
+#: users/forms.py:77
+msgid "подтверждение нового пароля"
+msgstr "confirmation of a new password"
+
+#: users/forms.py:86
+msgid "Пароли не совпадают"
+msgstr "Passwords don't match"
+
+#: users/forms.py:121
+msgid "Этот электронный адрес уже используется."
+msgstr "This email address is already in use."
+
+#: users/models.py:24 users/models.py:86
+msgid "Номер телефона должен начинаться с + и содержать только цифры"
+msgstr "The phone number must start with + and contain only digits"
+
+#: users/models.py:36
+msgid "Размер файла превышает допустимое значение 2 MB."
+msgstr "The file size exceeds the allowed value of 2 MB."
+
+#: users/models.py:57
+msgid "Введите корректный email адрес"
+msgstr "Enter the correct email address"
+
+#: users/models.py:68
+msgid "email"
+msgstr "email"
+
+#: users/models.py:82
+msgid "Фото профиля"
+msgstr "Profile Photo"
+
+#: users/models.py:90
+msgid "Номер телефона"
+msgstr "Phone number"
+
+#: users/models.py:105
+msgid "пользователи"
+msgstr "users"
+

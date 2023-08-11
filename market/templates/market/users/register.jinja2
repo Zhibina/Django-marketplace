@@ -1,0 +1,48 @@
+{% extends 'market/base.jinja2' %}
+
+{% block middle %}
+<link rel="stylesheet" href="{{ static('/market/assets/css/basic.css') }}">
+
+    <div class="wrapper">
+        <div class="header">
+                <h3 class="sign-in">{% trans %}Регистрация{% endtrans %}</h3>
+
+        </div>
+            <div class="clear"></div>
+            <form method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                <div>
+                    <input class="user-input" type="text" name="{{form.username.name}}" id="username.id" placeholder="{{form.username.label}}" />
+                    {% if form.username.errors %}
+                    <p class="error-message">{{ form.username.errors }}</p>
+                    {% endif %}
+                </div>
+                <div>
+                    <input class="user-input" type="email" name="{{form.email.name}}" id="email.id" placeholder="{{form.email.label}}" />
+                    {% if form.email.errors %}
+                    <p class="error-message">{{ form.email.errors }}</p>
+                    {% endif %}
+                </div>
+                <div>
+
+                    <input type="password" name="{{form.password1.name}}" id="password1.id" placeholder="{{form.password1.label}}" />
+                    {% if form.password1.errors %}
+                    <p class="error-message">{{ form.password1.errors }}</p>
+                    {% endif %}
+                </div>
+                <div>
+                    <input type="password" name="{{form.password2.name}}" id="password2.id" placeholder="{{form.password2.label}}" />
+                    {% if form.password2.errors %}
+                    <p class="error-message">{{ form.password2.errors }}</p>
+                    {% endif %}
+                </div>
+                <input type="submit" value="{% trans %}Зарегистрироваться{% endtrans %}" />
+
+                <a class="registr" href="{{ url('users:users_login') }}">
+                    {% trans %}Вход{% endtrans %}
+                </a>
+                <div class="clear"></div>
+            </form>
+    </div>
+
+{% endblock %}

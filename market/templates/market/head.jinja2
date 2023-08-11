@@ -1,0 +1,19 @@
+{% block head %}
+<title>Megano</title>
+<meta name="description" content="{% trans %}Описание страницы{% endtrans %}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link href="{{ static('/favicon.ico') }}" rel="shortcut icon">
+<link rel="preload" href="{{ static('/market/assets/fonts/Roboto/Roboto-Regular.woff') }}" as="font">
+<link rel="preload" href="{{ static('/market/assets/fonts/Roboto/Roboto-Italic.woff') }}" as="font">
+<link rel="preload" href="{{ static('/market/assets/fonts/Roboto/Roboto-Bold.woff') }}" as="font">
+<link rel="preload" href="{{ static('/market/assets/fonts/Roboto/Roboto-Bold_Italic.woff') }}" as="font">
+<link rel="preload" href="{{ static('/market/assets/fonts/Roboto/Roboto-Light.woff') }}" as="font">
+<link rel="preload" href="{{ static('/market/assets/fonts/Roboto/Roboto-Light_Italic.woff') }}" as="font">
+<link rel="stylesheet" href="{{ static('/market/assets/css/fonts.css') }}">
+<link rel="stylesheet" href="{{ static('/market/assets/css/basic.css') }}">
+<link rel="stylesheet" href="{{ static('/market/assets/css/extra.css') }}">
+<script src="{{ static('/market/assets/plg/CountDown/countdown.js') }}"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+{% endblock %}

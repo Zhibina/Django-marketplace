@@ -1,0 +1,23 @@
+[
+    {
+      "name": "Ноутбук ASUS VivoBook 15",
+      "description": "Ноутбук ASUS VivoBook 15 с диагональю экрана 15.6 дюйма, процессором Intel Core i5, оперативной памятью 8 ГБ и жестким диском на 512 ГБ.",
+      "limited_edition": true,
+      "category": "Ноутбуки",
+      "preview": "https://example.com/images/asus_vivobook_15.jpg"
+    },
+    {
+      "name": "Смартфон Samsung Galaxy S21",
+      "description": "Смартфон Samsung Galaxy S21 с диагональю экрана 6.2 дюйма, процессором Exynos 2100, оперативной памятью 8 ГБ и встроенной памятью на 128 ГБ.",
+      "limited_edition": false,
+      "category": "Смартфоны",
+      "preview": "https://example.com/images/samsung_galaxy_s21.jpg"
+    },
+    {
+      "name": "Планшет Apple iPad Air",
+      "description": "Планшет Apple iPad Air с диагональю экрана 10.9 дюйма, процессором Apple A14 Bionic, оперативной памятью 4 ГБ и встроенной памятью на 64 ГБ.",
+      "limited_edition": true,
+      "category": "Планшеты",
+      "preview": "https://example.com/images/apple_ipad_air.jpg"
+    }
+  ]

@@ -1,0 +1,48 @@
+{% extends "market/base.jinja2" %}
+{% block middle %}
+    <div class="Middle Middle_top">
+        <div class="Middle-top">
+            <div class="wrap">
+                <div class="Middle-header">
+                    <h1 class="Middle-title">Оплата
+                    </h1>
+                    <ul class="breadcrumbs Middle-breadcrumbs">
+                        <li class="breadcrumbs-item"><a href="index.html">home</a>
+                        </li>
+                        <li class="breadcrumbs-item breadcrumbs-item_current"><span>Оплата</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="Section">
+            <div class="wrap">
+                <form class="form Payment" action="#" method="post">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                    <div class="Payment-card">
+                        <div class="form-group">
+                            <label class="{{ form.card_number.id_for_label }}">Номер карты
+                            </label>
+                            {{ form.card_number }}
+                            {% if form.card_number.errors %}
+                                <div class="form-error">
+                                    {{ form.card_number.errors }}
+                                </div>
+              {% endif %}
+
+                        </div>
+                    </div>
+                    {% if pay == "ONLINE" %}
+                        <div class="Payment-pay">
+                             <input type="submit" class="btn btn_primary" value="Оплатить">
+                        </div>
+                    {% else %}
+
+                    <div class="Payment-pay"><a class="btn btn_primary" href="{{ url("payment", pk=order.id)}}?flag=1">Сгенерировать случайный счёт</a>
+                    </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

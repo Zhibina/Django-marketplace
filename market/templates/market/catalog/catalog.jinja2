@@ -1,0 +1,167 @@
+{% extends 'market/base.jinja2' %}
+{% block middle %}
+  <div class="Middle Middle_top">
+    <div class="Section Section_column Section_columnLeft">
+      <div class="wrap">
+        <div class="Section-column">
+          <div class="Section-columnSection">
+            <header class="Section-header">
+              <strong class="Section-title">{% trans %}Фильтр{% endtrans %}</strong>
+            </header>
+            <div class="Section-columnContent">
+              <form class="form" method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                <div class="form-group">
+                  <div class="range Section-columnRange">
+                    {{ form.price }}
+                    <div class="range-price">{% trans %}Цена{% endtrans %}:&#32;
+                      <div class="rangePrice"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  {{ form.name }}
+                </div>
+                <div class="form-group">
+                </div>
+                <div class="form-group">
+                  <label class="toggle">
+                    {{ form.in_stock }}<span class="toggle-box"></span>
+                    <span class="toggle-text">{% trans %}Только товары в наличии{% endtrans %}</span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="toggle">
+                    {{ form.free_delivery }} <span class="toggle-box"></span>
+                    <span class="toggle-text">{% trans %}С бесплатной доставкой{% endtrans %}</span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <div class="buttons">
+                    <button type="submit" name="filter" class="btn btn_square btn_dark btn_narrow">
+                      {% trans %}Фильтр{% endtrans %}</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="Section-columnSection">
+            <header class="Section-header">
+              <strong class="Section-title">{% trans %}Популярные тэги{% endtrans %}</strong>
+            </header>
+            <div class="Section-columnContent">
+              <div class="buttons">
+                {% for products in page_obj %}
+                  {% for tag in products.tags.all() %}
+                    {% if tag != products.tags.last() %}
+                      <p class="btn btn_default btn_sm">{{ tag }}</p>
+                    {% else %}
+                      <p class="btn btn_default btn_sm">{{ tag }}</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="Section-content">
+          <div class="Sort">
+            <div class="Sort-title">
+              {% trans %}Сортировать по:{% endtrans %}
+            </div>
+            <form method="get">
+              <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+              <div class="Sort-variants">
+                <button class="Sort-sortBy Sort-sortBy_dec" name="sort" value="sorting.get_count_history()" type="submit">
+                  {% trans %}Популярности{% endtrans %}</button>
+                <button class="Sort-sortBy" name="sort" value="offers__price" type="submit">
+                  {% trans %}Цене{% endtrans %}</button>
+                <button class="Sort-sortBy" name="sort" value="sorting.get_count_reviews()" type="submit">
+                  {% trans %}Отзывам{% endtrans %}</button>
+                <button class="Sort-sortBy Sort-sortBy_inc" name="sort" value="-offers__date_of_creation" type="submit">
+                  {% trans %}Новизне{% endtrans %}</button>
+              </div>
+            </form>
+          </div>
+          <div class="Cards">
+            {% for offer in page_obj %}
+              {% set product_price = [] %}
+              {% set product_discount_price = [] %}
+              {% set list_offer = [] %}
+              {% for shop in offer.offers.filter(product=offer) %}
+                {% if list_offer.append(shop.id) %}
+                {% endif %}
+                {% if product_price.append(shop.price) %}
+                {% endif %}
+                {% if product_discount_price.append(shop.price_with_discount) %}
+                {% endif %}
+              {% endfor %}
+              {% if page_obj %}
+                <div class="Card">
+                  <p>{{ offer.name }}</p>
+                  <a class="Card-picture" href="{{ url('products:product_detail' ,product_id=offer.pk)}}">
+                    <img src="{{ offer.preview.url }}" alt="{{ offer.preview }}"/></a>
+                  <div class="Card-content">
+                    <strong class="Card-title">
+                      <a href="{{ url('products:product_detail' ,product_id=offer.pk)}}">
+                        {{ offer.description | truncate(20, False, '...', 0) }}</a>
+                    </strong>
+                    <div class="Card-description">
+                      <div class="Card-cost">
+                        {% if (((product_price|sum)|round)/(product_price|count))|round ==
+                        (((product_discount_price|sum)|round)/(product_discount_price|count))|round %}
+                          <span class="Card-price">${{(((product_price|sum)|round)/(product_price|count))|round }}</span>
+                        {% else %}
+                          <span class="Card-priceOld">
+                            ${{(((product_price|sum)|round)/(product_price|count))|round }}
+                          </span>
+                          <span class="Card-price">
+                            ${{(((product_discount_price|sum)|round)/(product_discount_price|count))|round}}
+                          </span>
+                        {% endif %}
+                      </div>
+                      <div class="Card-category">
+                        {{ _(offer.category.name) }}
+                      </div>
+                    </div>
+                    <form class="Card-btn" method="post">
+                      {% csrf_token %}
+                      <button name="add_compare" type="submit" value="{{ list_offer | min }}">
+                        <img src="{{ static('market/assets/img/icons/card/bookmark.svg') }}" alt="bookmark.svg" />
+                      </button>
+                    </form>
+                    <div class="Card-description">
+                      <p>Колличество продавцов: {{ product_price|count }}</p>
+                        Отзывы: {% if offer.get_count_reviews() %}
+                      <a class="Tabs-link" href="{{ url('products:product_detail' ,product_id=offer.pk)}}#reviews">
+                        {{ offer.get_count_reviews() }}</a> {% else %}
+                      <a class="Tabs-link" href="{{ url('products:product_detail' ,product_id=offer.pk)}}#reviews">
+                        Нет отзывов
+                      </a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% else %}
+                <div class="Card">
+                  <h1>Список каталога пуст</h1>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="Pagination">
+            <div class="Pagination-ins">
+              <a class="Pagination-element Pagination-element_prev" href="?page=1"><</a>
+              {% for p in page_obj.paginator.page_range %}
+                <a class="Pagination-element" href="?page={{ p }}">
+                  <span class="Pagination-text">{{ p }}</span>
+                </a>
+              {% endfor %}
+              <a class="Pagination-element Pagination-element_prev" href="?page={{ page_obj.paginator.num_pages }}">></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "market/base.jinja2" %}
+{% block middle %}
+    <div class="Middle Middle_top">
+        <div class="Section Section_column Section_columnLeft">
+            <div class="wrap">
+                <div class="Section-column">
+                    <div class="Section-columnSection">
+                        <header class="Section-header">
+                            <strong class="Section-title">{% trans %}Навигация{% endtrans %}
+                            </strong>
+                        </header>
+                        <div class="Section-columnContent">
+                            <div class="NavigateProfile">
+                                <ul class="menu menu_vt">
+                                    <li class="menu-item"><a class="menu-link" href="{{ url('users:users_account') }}">{% trans %}Личный кабинет{% endtrans %}</a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="{{ url('users:users_profile') }}">{% trans %}Профиль{% endtrans %}</a>
+                                    </li>
+                                    <li class="menu-item_ACTIVE menu-item"><a class="menu-link" href="{{ url('order_history') }}">{% trans %}История заказов{% endtrans %}</a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="{{ url('users:browsing-history') }}">
+                                        {% trans %}История просмотров{% endtrans %}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Section-content">
+                    <div class="Orders">
+                        {% for order in orders %}
+                        <div class="Order Order_anons">
+                            <div class="Order-personal">
+                                <div class="row">
+                                    <div class="row-block"><a class="Order-title" href="{{ url('order_details', pk=order.id) }}">{% trans %}Заказ{% endtrans %}&#32;<span class="Order-numberOrder">№{{ order.id }}</span>&#32;от&#32;<span class="Order-dateOrder">{{ order.data.strftime('%m.%d.%Y') }}</span></a>
+                                    </div>
+                                    <div class="row-block">
+                                        <div class="Order-info Order-info_delivery">
+                                            <div class="Order-infoType">{% trans %}Тип доставки{% endtrans %}:
+                                            </div>
+                                            <div class="Order-infoContent">{{ order.get_delivery_display() }}
+                                            </div>
+                                        </div>
+                                        <div class="Order-info Order-info_pay">
+                                            <div class="Order-infoType">{% trans %}Оплата{% endtrans %}:
+                                            </div>
+                                            <div class="Order-infoContent">{{ order.get_pay_display() }}
+                                            </div>
+                                        </div>
+                                        <div class="Order-info">
+                                            <div class="Order-infoType">{% trans %}Общая стоимость{% endtrans %}:
+                                            </div>
+                                            <div class="Order-infoContent"><span class="Order-price">{{ order.total_cost }}$</span>
+                                            </div>
+                                        </div>
+                                        {%  if order.status |string() != "Оплата не выполнена" %}
+                                        <div class="Order-info Order-info_status">
+                                            <div class="Order-infoType">{% trans %}Статус{% endtrans %}:
+                                            </div>
+                                            <div class="Order-infoContent">{{ order.status }}
+                                            </div>
+                                        </div>
+                                        {% else %}
+                                        <div class="Order-info Order-info_error">
+                                            <div class="Order-infoType">{% trans %}Оплата не прошла{% endtrans %}:
+                                            </div>
+                                            <div class="Order-infoContent">{% trans %}Оплата не выполнена{% endtrans %}
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

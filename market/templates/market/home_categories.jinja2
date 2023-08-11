@@ -1,0 +1,22 @@
+<div class="Section">
+    <div class="wrap">
+        <div class="BannersHome">
+            {% for category in featured_categories %}
+            <a class="BannersHomeBlock" href="#">
+                <div class="BannersHomeBlock-row">
+                    <div class="BannersHomeBlock-block">
+                        <strong class="BannersHomeBlock-title">{% if category.parent %}{{ category.parent }} / {% endif %}{{ category.name }}
+                        </strong>
+{#                        <div class="BannersHomeBlock-content">from&#32;<span class="BannersHomeBlock-price">$199.00</span>#}
+{#                        </div>#}
+                    </div>
+                    <div class="BannersHomeBlock-block">
+                        <div class="BannersHomeBlock-img"><img src="{{ category.image.url }}" alt="bigGoods.png" />
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

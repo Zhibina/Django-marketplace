@@ -1,0 +1,35 @@
+[
+{
+  "model": "catalog.catalog",
+  "pk": 1,
+  "fields": {
+    "name": "ноутбуки",
+    "parent": null,
+    "image": "catalog/icon/bigGoods.png",
+    "is_featured": true,
+    "slug": "noutbuki"
+  }
+},
+{
+  "model": "catalog.catalog",
+  "pk": 2,
+  "fields": {
+    "name": "бытовая техника",
+    "parent": null,
+    "image": "catalog/icon/bitovaya-tekhnika-1.jpg",
+    "is_featured": true,
+    "slug": "bytovaja-tehnika"
+  }
+},
+{
+  "model": "catalog.catalog",
+  "pk": 3,
+  "fields": {
+    "name": "Laptop",
+    "parent": null,
+    "image": "catalog/icon/product.png",
+    "is_featured": true,
+    "slug": "Laptop"
+  }
+}
+]

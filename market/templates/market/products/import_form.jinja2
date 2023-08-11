@@ -1,0 +1,26 @@
+{% extends 'market/base.jinja2' %}
+
+{% block header_slider %}
+<div class="Middle Middle_top">
+    <div class="Middle-top">
+        <div class="wrap">
+            <div class="Middle-header">
+                <h1 class="Middle-title">{% trans %}Запуск импорта{% endtrans %}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="Section Section_column Section_columnLeft">
+        <div class="wrap">
+            <div class="Section-content">
+                <form method="post" enctype="multipart/form-data" class="input_form">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                    {{ form }}
+                    <button type="submit">
+                        {% trans %}Запустить импорт{% endtrans %}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

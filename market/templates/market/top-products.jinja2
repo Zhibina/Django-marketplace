@@ -1,0 +1,91 @@
+{% if top_products %}
+  {% for product in top_products %}
+    {% set product_price = [] %}
+    {% set product_discount_price = [] %}
+    {% for prices in product.offers.filter(product=product) %}
+      {% if product_price.append(prices.price) %}
+      {% endif %}
+      {% if product_discount_price.append(prices.price_with_discount) %}
+      {% endif %}
+    {% endfor %}
+    <div class="Card">
+      <a class="Card-picture" href="{{ url('products:product_detail' ,product_id=product.pk) }}">
+        <img src="{{ product.preview.url }}" alt="{{ product.preview.name }}" />
+      </a>
+      <div class="Card-content">
+        <strong class="Card-title">
+          <a href="{{ url('products:product_detail' ,product_id=product.pk) }}">{{ product.name}}</a>
+        </strong>
+        <div class="Card-description">
+          <div class="Card-cost">
+            {% if (((product_price|sum)|round)/(product_price|count))|round ==
+              (((product_discount_price|sum)|round)/(product_discount_price|count))|round %}
+              <span class="Card-price">${{(((product_price|sum)|round)/(product_price|count))|round }}</span>
+            {% else %}
+              <span class="Card-priceOld">${{(((product_price|sum)|round)/(product_price|count))|round }}</span>
+              <span class="Card-price">${{(((product_discount_price|sum)|round)/(product_discount_price|count))|round}}</span>
+            {% endif %}
+          </div>
+          <div class="Card-category">{{ product.category.name }}
+          </div>
+        </div>
+        <div class="Card-description">
+          <p>Колличество продавцов: {{ product_price|count }}</p>
+            Отзывы: {% if product.get_count_reviews() %}
+          <a class="Tabs-link" href="{{ url('products:product_detail' ,product_id=product.pk)}}#reviews">
+            {{ product.get_count_reviews() }}</a> {% else %}
+          <a class="Tabs-link" href="{{ url('products:product_detail' ,product_id=product.pk)}}#reviews">
+            Нет отзывов
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% else %}
+  {% for product in products %}
+    {% set product_price = [] %}
+    {% set product_discount_price = [] %}
+    {% for prices in product.offers.filter(product=product) %}
+      {% if product_price.append(prices.price) %}
+      {% endif %}
+      {% if product_discount_price.append(prices.price_with_discount) %}
+      {% endif %}
+    {% endfor %}
+    <div class="Card">
+      <a class="Card-picture" href="{{ url('products:product_detail' ,product_id=product.pk) }}">
+        <img src="{{ product.preview.url }}" alt="{{ product.preview.name }}" />
+      </a>
+      <div class="Card-content">
+        <strong class="Card-title">
+          <a href="{{ url('products:product_detail' ,product_id=product.pk) }}">
+            {{ product.description | truncate(20, False, '...', 0) }}
+          </a>
+        </strong>
+        <div class="Card-description">
+          <div class="Card-cost">
+            {% if (((product_price|sum)|round)/(product_price|count))|round ==
+              (((product_discount_price|sum)|round)/(product_discount_price|count))|round %}
+              <span class="Card-price">${{(((product_price|sum)|round)/(product_price|count))|round }}</span>
+            {% else %}
+              <span class="Card-priceOld">${{(((product_price|sum)|round)/(product_price|count))|round }}</span>
+              <span class="Card-price">${{(((product_discount_price|sum)|round)/(product_discount_price|count))|round}}</span>
+            {% endif %}
+          </div>
+          <div class="Card-category">{{ product.category.name }}
+          </div>
+        </div>
+        <div class="Card-description">
+          <p>Колличество продавцов: {{ product_price|count }}</p>
+            Отзывы: {% if product.get_count_reviews() %}
+          <a class="Tabs-link" href="{{ url('products:product_detail' ,product_id=product.pk)}}#reviews">
+            {{ product.get_count_reviews() }}</a> {% else %}
+          <a class="Tabs-link" href="{{ url('products:product_detail' ,product_id=product.pk)}}#reviews">
+            Нет отзывов
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}

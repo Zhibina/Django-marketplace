@@ -1,0 +1,78 @@
+[
+  {
+    "model": "discounts.shopitemdiscount",
+    "pk": 1,
+    "fields": {
+      "name": "Shop Laptop   1- 2 %",
+      "description": "shop",
+      "discount_amount": 10,
+      "discount_amount_type": 1,
+      "active": true,
+      "start_date": "2023-07-18T11:10:24.856Z",
+      "end_date": "2024-07-18T11:09:54Z",
+      "products": [
+        1,
+        2
+      ],
+      "categories": []
+    }
+  },
+  {
+    "model": "discounts.shopitemdiscount",
+    "pk": 2,
+    "fields": {
+      "name": "Shop Laptop   1- 2 sum",
+      "description": "summ",
+      "discount_amount": 100,
+      "discount_amount_type": 2,
+      "active": true,
+      "start_date": "2023-07-18T11:11:12.495Z",
+      "end_date": "2024-07-18T11:11:06Z",
+      "products": [
+        1,
+        2
+      ],
+      "categories": []
+    }
+  },
+  {
+    "model": "discounts.shopitemdiscount",
+    "pk": 3,
+    "fields": {
+      "name": "Shop Laptop   1- 2 + group %",
+      "description": "a",
+      "discount_amount": 15,
+      "discount_amount_type": 1,
+      "active": true,
+      "start_date": "2023-07-18T11:12:26.103Z",
+      "end_date": "2024-07-18T11:12:01Z",
+      "products": [
+        1,
+        2
+      ],
+      "categories": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "discounts.shopitemdiscount",
+    "pk": 4,
+    "fields": {
+      "name": "Shop Laptop   1- 2 + group sum",
+      "description": "s",
+      "discount_amount": 150,
+      "discount_amount_type": 2,
+      "active": true,
+      "start_date": "2023-07-18T11:13:00.786Z",
+      "end_date": "2024-07-18T11:12:50Z",
+      "products": [
+        1,
+        2
+      ],
+      "categories": [
+        2
+      ]
+    }
+  }
+]

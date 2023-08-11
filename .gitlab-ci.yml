@@ -1,0 +1,51 @@
+stages:
+  - code quality
+  - testing
+
+variables:
+  POSTGRES_DB: market
+  POSTGRES_USER: skillbox
+  POSTGRES_PASSWORD: secret
+  POSTGRES_HOST_AUTH_METHOD: trust
+
+services:
+  - name: redis:latest
+    alias: broker
+  - name: postgres:latest
+    alias: db
+
+default:
+  image: python:3.10.6
+  tags:
+    - students
+  cache:
+    paths:
+      - ~/.cache/pip/
+  before_script:
+    - pip install --upgrade pip
+    - pip install -r requirements/dev.txt
+
+flake8:
+  stage: code quality
+  script:
+    - flake8 market
+
+linter:
+  stage: code quality
+  script:
+    - pylint --rcfile=.pylintrc market/*
+
+test:
+  stage: testing
+  when: always
+  variables:
+    DATABASE_URL: "postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@db:5432/$POSTGRES_DB"
+    REDIS_URL: "redis://broker:6379/0"
+    PAY_URL: "http://127.0.0.1:8000/pay"
+  script:
+    - echo "PAY_URL = $PAY_URL" >> .env
+    - echo "DATABASE_URL = $DATABASE_URL" >> .env
+    - echo "REDIS_URL = $REDIS_URL" >> .env
+    - cd market
+    - python manage.py makemigrations
+    - python manage.py test

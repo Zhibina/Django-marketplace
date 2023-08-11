@@ -1,0 +1,57 @@
+[
+  {
+    "model": "products.productimage",
+    "pk": 7,
+    "fields": {
+      "product": 1,
+      "image": "products/product_1/images/bigGoods.png",
+      "description": "bigGoods.png"
+    }
+  },
+  {
+    "model": "products.productimage",
+    "pk": 8,
+    "fields": {
+      "product": 2,
+      "image": "products/product_2/images/card.jpg",
+      "description": "card.jpg"
+    }
+  },
+  {
+    "model": "products.productimage",
+    "pk": 9,
+    "fields": {
+      "product": 3,
+      "image": "products/product_3/images/bigGoods2.jpg",
+      "description": "bigGoods2.jpg"
+    }
+  },
+  {
+    "model": "products.productimage",
+    "pk": 10,
+    "fields": {
+      "product": 4,
+      "image": "products/product_4/images/ноут4.jpg",
+      "description": "ноут4.jpg"
+    }
+  },
+  {
+    "model": "products.productimage",
+    "pk": 11,
+    "fields":
+    {
+      "product": 5,
+      "image": "products/product_5/images/ноут5.jpg",
+      "description": "ноут5.jpg"
+    }
+  },
+  {
+    "model": "products.productimage",
+    "pk": 12,
+    "fields": {
+      "product": 6,
+      "image": "products/product_6/images/ноут6.jfif",
+      "description": "ноут6.jfif"
+    }
+  }
+]

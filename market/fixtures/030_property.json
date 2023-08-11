@@ -1,0 +1,30 @@
+[
+  {
+    "model": "products.property",
+    "pk": 1,
+    "fields": {
+      "name": "Страна-производитель"
+    }
+  },
+  {
+    "model": "products.property",
+    "pk": 2,
+    "fields": {
+      "name": "Гарантия от производителя"
+    }
+  },
+  {
+    "model": "products.property",
+    "pk": 3,
+    "fields": {
+      "name": "Цвет, заявленный производителем"
+    }
+  },
+  {
+    "model": "products.property",
+    "pk": 4,
+    "fields": {
+      "name": "Вес"
+    }
+  }
+]

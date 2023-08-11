@@ -1,0 +1,17 @@
+[
+  {
+    "model": "site_settings.sitesettings",
+    "pk": 1,
+    "fields": {
+      "pagination_size": 4,
+      "banners_count": 3,
+      "hot_deals_slider": 9,
+      "top_elements_count": 8,
+      "limited_edition_count": 16,
+      "maximum_number_of_viewed_products": 10,
+      "free_shipping_min_order_amount": "2000.00",
+      "standard_shipping_price": "200.00",
+      "express_shipping_price": "500.00"
+    }
+  }
+]

@@ -1,0 +1,296 @@
+{% extends "market/base.jinja2" %}
+{% block middle %}
+
+    <div class="Middle Middle_top">
+        <div class="Section Section_column Section_columnRight Section_columnWide Order">
+            <div class="wrap">
+
+                <div class="Section-column">
+                    <div class="Section-columnSection">
+                        <header class="Section-header">
+                            <strong class="Section-title">{% trans %}Прогресс заполнения{% endtrans %}
+                            </strong>
+                        </header>
+                        <div class="Section-columnContent">
+                            <div class="NavigateProfile">
+                                <ul class="menu menu_vt">
+                                    <li class="menu-item_ACTIVE menu-item" id="step-1"><a class="menu-link Order-next" href="#step1" onclick=illumination("step-1")>{% trans %}Шаг 1. Параметры пользователя{% endtrans %}</a>
+                                    </li>
+                                    <li class="menu-item" id="step-2"><a class="menu-link Order-next" id="step-2a" href="#step2" onclick=illumination("step-2")>{% trans %}Шаг 2. Способ доставки{% endtrans %}</a>
+                                    </li>
+                                    <li class="menu-item" id="step-3"><a class="menu-link Order-next" href="#step3" onclick=illumination("step-3")>{% trans %}Шаг 3. Способ оплаты{% endtrans %}</a>
+                                    </li>
+                                    <li class="menu-item" id="step-4"><a class="menu-link Order-next" href="#step4" onclick='copyaddress("step-3","step-4")'>{% trans %}Шаг 4. Подтверждение заказа{% endtrans %}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Section-content">
+                    <form class="form" id="form-section-content" action="#" method="post">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                        <div class="Order-block Order-block_OPEN" id="step1">
+                            <header class="Section-header Section-header_sm">
+                                <h2 class="Section-title">{% trans %}Шаг 1. Параметры пользователя{% endtrans %}
+                                </h2>
+                            </header>
+                            <div class="row">
+                                {% if request.user.is_authenticated %}
+                                <div class="row-block">
+                                    <div class="form-group">
+                                        <label class="form-label" for="name">{% trans %}ФИО{% endtrans %}
+                                        </label>
+                                            <div class="form-input" >
+                                                <p> {{ request.user.username }} </p>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="phone">{% trans %}Телефон{% endtrans %}
+                                        </label>
+                                            <div class="form-input">
+                                                <p> {{ request.user.phone_number }} </p>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="mail">E-mail
+                                        </label>
+                                           <div class="form-input">
+                                               <p> {{ request.user.email }} </p>
+                                           </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Order-footer"><a class="btn btn_success Order-next" href="#step2" onclick=illumination("step-2")>{% trans %}Дальше{% endtrans %}</a>
+                            </div>
+                        </div>
+                        {% else %}
+                        </form>
+                        <form class="form" id="form-section-content" action="#" method="post">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                            <div class="row-block">
+                                 <div class="form-group">
+                                    <label class="form-label" for="{{ form_log.email.id_for_label }}">E-mail
+                                    </label>
+                                     {{ form_log.email }}
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="{{ form_log.password.id_for_label }}">{% trans %}Пароль{% endtrans %}
+                                    </label>
+                                    {{ form_log.password }}
+                                </div>
+
+                                <div class="form-group">
+                                    <button class="btn btn_muted Order-btnReg" type="submit">{% trans %}Войдите в свою учётную запись{% endtrans %}</button>
+                                </div>
+                                <div class="form-group">
+                                    {% if text %}
+                                        <t>{{ text }}</t>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="row-block">
+                            <div class="form-group"><a class="btn btn_muted Order-btnReg" href="{{ url('users:users_register') }}">{% trans %}Я еще не зарегистрирован{% endtrans %}</a>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <div class="Order-block" id="step2">
+                            <header class="Section-header Section-header_sm">
+                                <h2 class="Section-title">{% trans %}Шаг 2. Способ доставки{% endtrans %}
+                                </h2>
+                            </header>
+                            <div class="form-group">
+                                <div>
+                                    <label class="toggle">
+                                        <input type="radio" name="delivery" value="ORDINARY" checked="checked" /><span class="toggle-box"></span><span class="toggle-text">{% trans %}Обычная доставка{% endtrans %}</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="toggle">
+                                        <input type="radio"  name="delivery" value="EXPRESS" /><span class="toggle-box"></span><span class="toggle-text" id="exp">{% trans %}Экспресс доставка{% endtrans %}</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="city">{% trans %}Город{% endtrans %}
+                                </label>
+                                <input class="form-input" id="city" name="city" type="text" maxlength="100" data-validate="require" required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="address" >{% trans %}Адрес{% endtrans %}
+                                </label>
+                                <textarea class="form-textarea" name="address" id="address" maxlength="200" data-validate="require" required></textarea>
+                            </div>
+                            <div class="Order-footer"><a class="btn btn_success Order-next" href="#step3" onclick=illumination("step-3",)>{% trans %}Дальше{% endtrans %}</a>
+                            </div>
+                        </div>
+                        <div class="Order-block" id="step3">
+                            <header class="Section-header Section-header_sm">
+                                <h2 class="Section-title">{% trans %}Шаг 3. Способ оплаты{% endtrans %}
+                                </h2>
+                            </header>
+                            <div class="form-group">
+                                <div>
+                                    <label class="toggle">
+                                        <input type="radio" name="pay" value="ONLINE" checked="checked" /><span class="toggle-box"></span><span class="toggle-text">{% trans %}Онлайн картой{% endtrans %}</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="toggle">
+                                        <input type="radio" name="pay" value="SOMEONE" /><span class="toggle-box"></span><span class="toggle-text" id="some_one">{% trans %}Онлайн со случайного чужого счета{% endtrans %}</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="Order-footer"><a class="btn btn_success Order-next" href="#step4" onclick='copyaddress("step-3","step-4")'>{% trans %}Дальше{% endtrans %}</a>
+                            </div>
+                        </div>
+                        <div class="Order-block" id="step4">
+                            <header class="Section-header Section-header_sm">
+                                <h2 class="Section-title">{% trans %}Шаг 4. Подтверждение заказа{% endtrans %}
+                                </h2>
+                            </header>
+                            <!--+div.Order.-confirmation-->
+
+                            {% if request.user.is_authenticated %}
+                            <div class="Order-infoBlock">
+                                <div class="Order-personal">
+                                    <div class="row">
+                                        <div class="row-block">
+                                            <div class="Order-info">
+                                                <div class="Order-infoType">{% trans %}ФИО{% endtrans %}:
+                                                </div>
+                                                <div class="Order-infoContent">{{ request.user.username }}
+                                                </div>
+                                            </div>
+                                            <div class="Order-info">
+                                                <div class="Order-infoType">{% trans %}Телефон{% endtrans %}:
+                                                </div>
+                                                <div class="Order-infoContent">{{ request.user.phone_number }}
+                                                </div>
+                                            </div>
+                                            <div class="Order-info">
+                                                <div class="Order-infoType">E-mail:
+                                                </div>
+                                                <div class="Order-infoContent">{{ request.user.email }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-block">
+                                            <div class="Order-info Order-info_delivery">
+                                                <div class="Order-infoType">{% trans %}Тип доставки{% endtrans %}:
+                                                </div>
+                                                <div class="Order-infoContent" id="delivery_infoBlock">{% trans %}Обычная доставка{% endtrans %}
+                                                </div>
+                                            </div>
+                                            <div class="Order-info">
+                                                <div class="Order-infoType" >{% trans %}Город{% endtrans %}:
+                                                </div>
+                                                <div class="Order-infoContent" id="city2">
+                                                </div>
+                                            </div>
+                                            <div class="Order-info">
+                                                <div class="Order-infoType">{% trans %}Адрес{% endtrans %}:
+                                                </div>
+                                                <div class="Order-infoContent" id="address2">
+                                                </div>
+                                            </div>
+                                            <div class="Order-info Order-info_pay">
+                                                <div class="Order-infoType">{% trans %}Оплата{% endtrans %}:
+                                                </div>
+                                                <div class="Order-infoContent" id="pay_infoBlock">{% trans %}Онлайн картой{% endtrans %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Cart Cart_order">
+                                    {% for item_i in cart_list.query_set_cart %}
+                                    <div class="Cart-product">
+                                        <div class="Cart-block Cart-block_row">
+                                            <div class="Cart-block Cart-block_pict"><a class="Cart-pict" href="#"><img class="Cart-img" src="/media/{{item_i.offer.product.preview}}" alt="card.jpg" /></a>
+                                            </div>
+                                            <div class="Cart-block Cart-block_info"><a class="Cart-title" href="{{ url("products:product_detail", product_id=item_i.offer.product.id)}}">{{ item_i.offer.product.name }}</a>
+                                                <div class="Cart-desc">{{ item_i.offer.product.description }}
+                                                </div>
+                                            </div>
+                                            <div class="Cart-block Cart-block_price">
+                                                <div class="Cart-price">{{ item_i.summ_offer }}$.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Cart-block Cart-block_row">
+                                            <div class="Cart-block Cart-block_amount">{{ item_i.quantity }} {% trans %}шт{% endtrans %}.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                    <div class="Cart-total">
+                                        <div class="Cart-block Cart-block_total">
+                                            <strong class="Cart-title">{% trans %}Доставка{% endtrans %}:
+                                            </strong><span class="Cart-price" id="delivery-cost">{{ cart_list.delivery_ordinary }}$</span>
+                                        </div>
+                                        <div class="Cart-block Cart-block_total">
+                                            <strong class="Cart-title">{% trans %}Итого{% endtrans %}:
+                                            </strong><span class="Cart-price" id="total-express">{{ cart_list.total_cost_ordinary }}$</span>
+                                        </div>
+                                        <div class="Cart-block">
+                                            <button  class="btn btn_primary btn_lg" type="submit" aria-invalid="true" onclick="validform()" formnovalidate>{% trans %}Создать заказ и оплатить{% endtrans %}
+                                            </button>
+                                        </div>
+                                        <script>
+                                             function validform() {
+                                                  var f = document.getElementById('form-section-content');
+                                                  if (f.checkValidity()) {}
+                                                  else {
+                                                      document.getElementById("step-2a").click();
+                                                  }
+                                            }
+                                        </script>
+                                        <span  class="text-danger col-sm-4"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    var delivery = [{{ cart_list.delivery_express }},
+                    {{ cart_list.total_cost_express }}
+                    ];
+
+    function copyaddress(step1, step2) {
+        document.getElementById(step1).classList.remove("menu-item_ACTIVE");
+        document.getElementById(step2).classList.add("menu-item_ACTIVE");
+        document.getElementById("city2").innerHTML = document.getElementById("city").value;
+        document.getElementById("address2").innerHTML = document.getElementById("address").value;
+        document.getElementById("step-1").classList.remove("menu-item_ACTIVE");
+        document.getElementById("step-2").classList.remove("menu-item_ACTIVE");
+        document.getElementById("step-3").classList.remove("menu-item_ACTIVE");
+        const formData = new FormData(document.getElementById("form-section-content"));
+            if (formData.get("delivery") === "EXPRESS"){
+                document.getElementById("delivery_infoBlock").innerHTML = document.getElementById("exp").innerHTML;
+                document.getElementById("delivery-cost").innerHTML = delivery[0] + " Руб";
+                document.getElementById("total-express").innerHTML = delivery[1] + " Руб";
+                 }
+                console.log(formData.get("pay-order"))
+            if (formData.get("pay") === "SOMEONE"){
+                document.getElementById("pay_infoBlock").innerHTML = document.getElementById("some_one").innerHTML}
+
+    }
+
+    function illumination(step) {
+        document.getElementById("step-1").classList.remove("menu-item_ACTIVE");
+        document.getElementById("step-2").classList.remove("menu-item_ACTIVE");
+        document.getElementById("step-3").classList.remove("menu-item_ACTIVE");
+        document.getElementById("step-4").classList.remove("menu-item_ACTIVE");
+        document.getElementById(step).classList.add("menu-item_ACTIVE")
+    }
+
+</script>
+{% endblock %}

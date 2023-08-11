@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Product 1",
+    "description": "Description 1",
+    "limitededition": false,
+    "preview": "",
+    "category": "Category 1"
+  },
+  {
+    "name": "Product 2",
+    "description": "Description 2",
+    "limitededition": false,
+    "preview": "",
+    "category": "Category 1"
+  }
+]

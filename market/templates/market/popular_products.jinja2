@@ -1,0 +1,44 @@
+{% if products %}
+    <header class="Section-header">
+        <h2 class="Section-title">Популярные товары
+        </h2>
+    </header>
+    <div class="Cards">
+        {% for product in products %}
+            <div class="Card"><a class="Card-picture"
+                                 href="{{ url('products:product_detail' ,product_id=product.pk) }}"><img
+                    src="{{ product.preview.url }}" alt="{{ product.preview.name }}"/></a>
+                <div class="Card-content">
+                    <strong class="Card-title"><a href="{{ url('products:product_detail' ,product_id=product.pk) }}">
+                        {{ product.description | truncate(20, False, '...', 0) }}</a>
+                    </strong>
+                    <div class="Card-description">
+                        <div class="Card-cost"><span class="Card-price">$86</span>
+                        </div>
+                        <div class="Card-category">{{ product.category.name }}
+                        </div>
+                        <form class="Card-hover" method="post" action="{{ url('cart:cart_add', product.id, 1) }}">
+                            {% csrf_token %}
+                            <input type="hidden" name="value_amount" value="+">
+                            <a class="Card-btn" href="#" onclick="$(this).closest('form').submit()">
+                                <img src="{{ static('market/assets/img/icons/card/cart.svg') }}" alt="cart.svg"/>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="Pagination">
+        <div class="Pagination-ins">
+            <a class="Pagination-element Pagination-element_prev" href="?page=1"><</a>
+            {% for p in products.paginator.page_range %}
+                <a class="Pagination-element" href="?page={{ p }}">
+                    <span class="Pagination-text">{{ p }}</span>
+                </a>
+            {% endfor %}
+            <a class="Pagination-element Pagination-element_prev"
+               href="?page={{ products.paginator.num_pages }}">></a>
+        </div>
+    </div>
+{% endif %}

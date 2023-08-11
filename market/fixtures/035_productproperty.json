@@ -1,0 +1,128 @@
+[
+  {
+    "model": "products.productproperty",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "property": 1,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 2,
+    "fields": {
+      "product": 2,
+      "property": 1,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 3,
+    "fields": {
+      "product": 3,
+      "property": 1,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 4,
+    "fields": {
+      "product": 5,
+      "property": 1,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 5,
+    "fields": {
+      "product": 4,
+      "property": 1,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 6,
+    "fields": {
+      "product": 2,
+      "property": 2,
+      "value": "2"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 7,
+    "fields": {
+      "product": 1,
+      "property": 2,
+      "value": "1"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 8,
+    "fields": {
+      "product": 4,
+      "property": 2,
+      "value": "4"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 9,
+    "fields": {
+      "product": 3,
+      "property": 2,
+      "value": "3"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 10,
+    "fields": {
+      "product": 5,
+      "property": 2,
+      "value": "5"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 11,
+    "fields": {
+      "product": 1,
+      "property": 4,
+      "value": "5"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 12,
+    "fields": {
+      "product": 4,
+      "property": 4,
+      "value": "8"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 13,
+    "fields": {
+      "product": 5,
+      "property": 4,
+      "value": "8"
+    }
+  },
+  {
+    "model": "products.productproperty",
+    "pk": 14,
+    "fields": {
+      "product": 3,
+      "property": 3,
+      "value": "Silver"
+    }
+  }
+]

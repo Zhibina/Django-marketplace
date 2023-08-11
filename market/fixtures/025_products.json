@@ -1,0 +1,86 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "ноутбук 1",
+      "limited_edition": true,
+      "index": 0,
+      "preview": "products/product_1/preview/bigGoods.png",
+      "category": 1,
+      "description": "lorem"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "ноутбук 2",
+      "limited_edition": false,
+      "index": 1,
+      "preview": "products/product_2/preview/card.jpg",
+      "category": 1,
+      "description": "lorem"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "ноутбук 3",
+      "limited_edition": true,
+      "index": 0,
+      "preview": "products/product_3/preview/bigGoods.png",
+      "category": 1,
+      "description": "Lorem"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "ноутбук 4",
+      "limited_edition": true,
+      "index": 3,
+      "preview": "products/product_4/preview/ноут4.jpg",
+      "category": 1,
+      "description": "lorem"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "ноутбук 5",
+      "limited_edition": true,
+      "index": 4,
+      "preview": "products/product_5/preview/ноут5.jpg",
+      "category": 1,
+      "description": "lorem"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "ноутбук 6",
+      "limited_edition": true,
+      "index": 5,
+      "preview": "products/product_6/preview/ноут6.jfif",
+      "category": 1,
+      "description": "lorem"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "name": "Стиральная машина 1",
+      "limited_edition": false,
+      "index": 0,
+      "preview": "products/product_7/preview/stir.jpeg",
+      "category": 2,
+      "description": ""
+    }
+  }
+]

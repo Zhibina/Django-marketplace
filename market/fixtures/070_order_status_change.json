@@ -1,0 +1,12 @@
+[
+  {
+    "model": "shops.orderstatuschange",
+    "pk": 1,
+    "fields": {
+      "order": 1,
+      "time": "2023-06-20T11:05:33.420Z",
+      "src_status_id": 1,
+      "dst_status_id": 2
+    }
+  }
+]
